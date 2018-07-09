@@ -53,39 +53,36 @@
     </style>
     
     
-    <body>
+    <body >
 
 
-    	<!-- Top Nav  -->
-		<nav class="navbar" style="padding-top: 15px;">
+
+
+		<!-- Side Bar -->
+		<div class="container" style="z-index: -1;">
+		    	<!-- Top Nav  -->
+		<nav class="navbar fixed-top" style="padding-top: 15px;">
 		  <div class="container-fluid">
-
-		    <button data-toggle="collapse" data-target="#collapseExample" class="btn btn-primary">Toggle Menu</button>
-		    
+		  	<div class="row">
+		  		<button data-toggle="collapse" data-target="#collapseExample" class="btn btn-primary">Toggle Menu</button>
+		  	</div>
 		  </div>
 		</nav>
 		
-  <div style="height:200px;background-color:#ddd">
-    <div class="h-25 d-inline-block p-2 bg-warning">Height 25%</div>
-    <div class="h-50 d-inline-block p-2 bg-warning">Height 50%</div>
-    <div class="h-75 d-inline-block p-2 bg-warning">Height 75%</div>
-    <div class="h-100 d-inline-block p-2 bg-warning">Height 100%</div>
-    <div class="mh-100 d-inline-block p-2 bg-warning" style="height:500px">Max Height 100%</div>
-  </div>
 		
-		<!-- Side Bar -->
-		<div class="container-fluid" style="z-index: -1;">
 			<div class="row">
-    			<div class="col-xs-offset-6 col-xs-6 h-100"  id="collapseExample"
-    			style="height: 100%; z-index: 1; position: relative; background-color: white; border-style:solid; padding-right: 30px" >
+    			<div class="offset-6 col-xs-6"  id="collapseExample" >
     					<h1>hello</h1>
     					<hr>
-    				<!--</div>-->
+    				
     			</div>
+    			 <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
+    <div class="offset-4 col-sm-3" style="background-color:lavenderblush;">.col-sm-8</div>
   			</div>
-  		</div>
-
-		<!-- Bottom Nav -->
+  			
+  			
+  			
+  					<!-- Bottom Nav -->
 		<nav class="navbar fixed-bottom"> <!-- style="padding-bottom: 40px;">-->
 		  <div class="container-fluid">
 		  
@@ -102,6 +99,11 @@
 		  </div>
 		</nav>
 		    
+  			
+  		</div>
+  		 
+
+
 
     	<!-- Cytoscape Viewer  -->
     	<div id="cy" style="z-index: -1;"></div>
