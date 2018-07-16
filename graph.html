@@ -13,17 +13,18 @@
   	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> <!-- Icons -->
   	<link href="https://cdn.rawgit.com/cytoscape/cytoscape.js-panzoom/11f0f050/cytoscape.js-panzoom.css" rel="stylesheet"> <!-- Panzoom -->
   	<script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-panzoom/11f0f050/cytoscape-panzoom.js"></script>  <!-- Panzoom -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>  <!-- Popper (for tooltips) -->
   	<style> div { z-index: 1;} </style> <!-- Makes all the web ojects appear "in front" of the CX canvas -->
 </head>
 
 <body >
 	<!-- Flexbox container that holds the app -->
 	<div class="d-flex flex-column" style="z-index: -1; min-height: 100vh;">
-		
+
 		<!-- Top Navbar -->
-		<div><nav class="navbar navbar-expand-sm pb-0" style="background-color: black;">
+		<div><nav class="navbar navbar-expand-sm pb-0 d-none d-md-flex" style="background-color: black;">
 		  	<a class="navbar-brand pr-5" href="#"><img src="/staticFiles/ndex_logo.png" alt="logo" style="width:120px;"></a>
-			<ul class="navbar-nav mr-auto">
+			<ul class="navbar-nav mr-auto small">
 			  	<li class="nav-item"><a class="nav-link text-light" href="#"> News </a></li>
 			  	<li class="nav-item"><a class="nav-link text-light" href="#"> About </a></li>
 			  	<li class="nav-item"><a class="nav-link text-light" href="#"> Docs </a></li>
@@ -31,31 +32,58 @@
 			  	<li class="nav-item"><a class="nav-link text-light" href="#"> Contact Us </a></li>
 			  	<li class="nav-item"><a class="nav-link text-light" href="#"> Cite NDEx </a></li>
 		  	</ul>
-		  	<button data-toggle="collapse" data-target="#dataPanel,#footer" class="btn btn-default btn-sm"><i class="fa fa-search"></i></button>
-      		<button data-toggle="collapse" data-target="#dataPanel,#footer" class="btn btn-info btn-sm mx-3"><i class="fa fa-home"></i></button>
+		  	<button class="btn btn-default btn-sm"><i class="fa fa-search"></i></button>
+      		<button class="btn btn-info btn-sm mx-3"><i class="fa fa-home"></i></button>
       		<span class="navbar-text text-info small">Hi, Matthew Elliott!</span>
       		<a class="nav-link text-light" href="#"> Sign out </a>s			
 		</nav></div>
 		
 		
 		<!-- Main Info Box -->
-		<div class="mt-3 mb-1">
-			<div class="col">
-	      		<button data-toggle="collapse" data-target="#dataPanel,#footer" class="btn btn-default border float-right">
-	      			<i class="fa fa-align-justify"></i>
-      			</button>
-	    	</div>
-	  	</div>
+		<div class="offset-sm-7 offset-md-8 offset-lg-9  mt-2 mb-0 mr-3  bg-white border rounded border-primary" >
+		    	<div class="container" style="z-index: 1">
+		    		<!-- Table inside Info Box -->
+					<table class="table table-sm m-0 small" ><tbody>  
+					    <tr >
+					      <th scope="row" class="text-primary">Title</th>
+					      <td colspan="3">My Awesome Network</td>
+					    </tr><tr>
+					      <th class="text-primary">Nodes</th>
+					      <td>13</td>
+					      <th class="text-primary">Edges</th>
+					      <td>30</td>
+					    </tr><tr>
+					      <th class="text-primary">Status</th>
+					      <td colspan="3"><span class="text-danger"><b>Private </b></span>&nbsp<span class="text-secondary">(read only)</span></td>
+					    </tr>
+					  </tbody></table>
+			    </div>
+		</div>
+		<div class="offset-sm-7 offset-md-8 offset-lg-9  my-0 mr-3" > 
+				<p class="text-center m-0 p-0"><button data-toggle="collapse" data-target="#dataPanel,#footer" class="btn p-0 m-0">
+      				<i class="fa fa-chevron-down" style="color:blue"></i>
+  				</button></p>
+		</div>
 
 		
 		<!-- Data Panel -->
 		<div  id="dataPanel" class="offset-sm-5 offset-md-6 offset-lg-7  mr-3 flex-grow-1 bg-white border rounded collapse show" >
-		    	<div class="container" style="z-index: 1">
-						<h1>hello</h1>
-			    </div>
+	    	<div class="container p-1" style="z-index: 1">
+	    		<!-- 3 Buttons to Toggle View  -->
+	    		<div class="btn-group btn-group-sm btn-group-toggle float-right" data-toggle="buttons" >  
+				  <button type="button" class="btn btn-default active"  data-toggle="tooltip" data-placement="top" title="Hooray!">
+				  	<input type="radio" name="options" id="option1" autocomplete="off" checked><i class="fa fa-info"></i></button>
+				  <button type="button" class="btn btn-default "><input type="radio" name="options" id="option2" autocomplete="off"><i class="fa fa-code-fork"></i></button>
+				  <button type="button" class="btn btn-default "><input type="radio" name="options" id="option3" autocomplete="off"><i class="fa fa-history"></i></button>
+				</div>
+				
+				<!-- Info View  -->
+				<a href="#" data-toggle="tooltip" data-placement="top" title="Hooray!">Top</a>
+				
+		    </div>
 		</div>
 
-		<!-- Footer -->
+		<!-- Search and Buttons -->
    		<div id="footer" class="mb-3 mt-1 collapse show" >
 	    	<div class="col-md-6 col-lg-4">
 	    		<div class="input-group">
@@ -64,15 +92,24 @@
 	    		</div>
 	  		</div>
   		</div>
+  		<div>
+  		</div>
   		
-  	</div> <!-- end Flexbox -->
-		  	
+  		
+  	</div> <!-- end Flexbox -->		  	
 	<div id="cy" style="width: 100%; height: 100%; position: absolute; z-index: 0; top: 0px; left: 0px;"></div> <!-- Cytoscape Viewer  -->
     	
     	
     	
 </body>
 </html>
+
+<!-- Enable Tooltips -->
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
 
 
 
