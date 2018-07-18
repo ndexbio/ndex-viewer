@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://blog.js.cytoscape.org/public/demos/getting-started/cytoscape.js"></script> <!-- Cytoscape -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    <!-- jQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>  <!-- Popper (for tooltips) -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>  <!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> <!-- Bootstrap -->
   	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  <!-- Angular -->
   	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> <!-- Icons -->
   	<link href="https://cdn.rawgit.com/cytoscape/cytoscape.js-panzoom/11f0f050/cytoscape.js-panzoom.css" rel="stylesheet"> <!-- Panzoom -->
   	<script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-panzoom/11f0f050/cytoscape-panzoom.js"></script>  <!-- Panzoom -->
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>  <!-- Popper (for tooltips) -->
   	<style> div { z-index: 1;} </style> <!-- Makes all the web ojects appear "in front" of the CX canvas -->
 </head>
 
 <body >
 	<!-- Flexbox container that holds the app -->
-	<div class="d-flex flex-column" style="z-index: -1; min-height: 100vh;">
+	<div class="d-flex flex-column" style="z-index: -1; min-height: 100vh;"> 
 
 		<!-- Top Navbar -->
 		<div><nav class="navbar navbar-expand-sm pb-0 d-none d-md-flex" style="background-color: black;">
@@ -71,25 +71,66 @@
 	    	<div class="container p-1" style="z-index: 1">
 	    		<!-- 3 Buttons to Toggle View  -->
 	    		<div class="btn-group btn-group-sm btn-group-toggle float-right" data-toggle="buttons" >  
-				  <button type="button" class="btn btn-default active"  data-toggle="tooltip" data-placement="top" title="Hooray!">
-				  	<input type="radio" name="options" id="option1" autocomplete="off" checked><i class="fa fa-info"></i></button>
-				  <button type="button" class="btn btn-default "><input type="radio" name="options" id="option2" autocomplete="off"><i class="fa fa-code-fork"></i></button>
-				  <button type="button" class="btn btn-default "><input type="radio" name="options" id="option3" autocomplete="off"><i class="fa fa-history"></i></button>
+				  	<button type="button" class="btn btn-default active"  data-toggle="tooltip" data-placement="top" title="Info">
+				  		<input type="radio" name="options" id="option1" autocomplete="off" checked><i class="fa fa-info"></i></button>
+			  		<button type="button" class="btn btn-default"  data-toggle="tooltip" data-placement="top" title="Nodes/Edges">
+				  		<input type="radio" name="options" id="option2" autocomplete="off"><i class="fa fa-share-alt"></i></button>
+			  		<button type="button" class="btn btn-default"  data-toggle="tooltip" data-placement="top" title="History">
+				  		<input type="radio" name="options" id="option3" autocomplete="off"><i class="fa fa-history"></i></button>
 				</div>
 				
 				<!-- Info View  -->
-				<a href="#" data-toggle="tooltip" data-placement="top" title="Hooray!">Top</a>
-				
 		    </div>
 		</div>
 
+
 		<!-- Search and Buttons -->
    		<div id="footer" class="mb-3 mt-1 collapse show" >
-	    	<div class="col-md-6 col-lg-4">
-	    		<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search" name="q">	
-	    	        <button class="btn border rounded-0" type="submit"><i class="fa fa-search"></i></button>
-	    		</div>
+	    	<!-- Search Bar -->
+	    	<div class="row ml-1">
+		    	<div class="col-md-6 col-lg-4">
+		    		<div class="input-group">
+			    		<div class="btn-group dropup">
+							  <button type="button" class="btn border rounded-0 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+							  <div class="dropdown-menu">
+							        <a class="dropdown-item small" href="#">Action</a>
+								    <a class="dropdown-item small" href="#">Another action</a>
+								    <a class="dropdown-item small" href="#">Something else here</a>
+							  </div>
+						</div>
+						<input type="text" class="form-control" placeholder="Search" name="q">	
+		    	        <button class="btn border rounded-0" type="submit"><i class="fa fa-search"></i></button>
+		    		</div>
+		  		</div>
+
+		  		<div class="offset-lg-3 d-none d-md-flex justify-content-center  col">
+		  			<div  class="btn-group btn-group-sm mr-1 p-0">
+		  				<div id="actions" class="btn-group btn-group-sm show">
+		  				<button  type="button" class="btn border btn-warning p-1" data-toggle="tooltip" title="Open in Cytoscape"><img src="/staticFiles/cytoscape-icon.png" alt="logo" style="width:20px;"></button>
+		  				<button  type="button" class="btn border btn-success" data-toggle="tooltip" title="Download to CX"><i class="fa fa-download"></i></button>
+		  				<button  type="button" class="btn border btn-primary" data-toggle="tooltip" title="Clone Network"><i class="fa fa-clone"></i></button>
+		  				<button  type="button" class="btn border btn-primary"  data-toggle="tooltip" title="Table View"><i class="fa fa-table"></i></button>
+		  				<button  type="button" class="btn border btn-primary"  data-toggle="tooltip" title="Share Network" ><i class="fa fa-share"></i></button>
+		  				<button  type="button" class="btn border btn-primary"  data-toggle="tooltip" title="Edit Network"><i class="fa fa-pencil"></i></button>
+  						<div class="btn-group dropup">
+							  <button  type="button" class="btn border btn-primary"  data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+							  	<i class="fa fa-ellipsis-h" title="More Options" data-toggle="tooltip"></i></button>
+							  <div class="dropdown-menu">
+							        <a class="dropdown-item small" href="#">Request DOI</a>
+								    <a class="dropdown-item small" href="#">Export</a>
+								    <a class="dropdown-item small" href="#">Add to My Sets</a>
+								    <a class="dropdown-item small" href="#">Delete</a>
+							  </div>
+						</div>
+		  				
+		  				
+		  				</div>
+		  				<button  type="button" class="btn border btn-default" data-toggle="collapse" data-target="#actions"><i class="fa fa-caret-left"></i></button>
+		  			</div>
+		  			
+		  			
+		  		</div>
+
 	  		</div>
   		</div>
   		<div>
