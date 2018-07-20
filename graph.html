@@ -14,15 +14,14 @@
   	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> <!-- Icons -->
   	<link href="https://cdn.rawgit.com/cytoscape/cytoscape.js-panzoom/11f0f050/cytoscape.js-panzoom.css" rel="stylesheet"> <!-- Panzoom -->
   	<script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-panzoom/11f0f050/cytoscape-panzoom.js"></script>  <!-- Panzoom -->
-  	<style> div { z-index: 1;} </style> <!-- Makes all the web ojects appear "in front" of the CX canvas -->
 </head>
 
 <body >
 	<!-- Flexbox container that holds the app -->
-	<div class="d-flex flex-column" style="z-index: -1; min-height: 100vh;"> 
+	<div class="d-flex flex-column" style="min-height: 100vh;"> 
 
 		<!-- Top Navbar -->
-		<div><nav class="navbar navbar-expand-sm pb-0 d-none d-md-flex" style="background-color: black;">
+		<div><nav class="navbar navbar-expand-sm pb-0 d-none d-md-flex" style="background-color: black;  z-index: 4;">
 		  	<a class="navbar-brand pr-5" href="#"><img src="/staticFiles/ndex_logo.png" alt="logo" style="width:120px;"></a>
 			<ul class="navbar-nav mr-auto small">
 			  	<li class="nav-item"><a class="nav-link text-light" href="#"> News </a></li>
@@ -40,35 +39,58 @@
 		
 		
 		<!-- Main Info Box -->
-		<div class="offset-sm-7 offset-md-8 offset-lg-9  mt-2 mb-0 mr-3  bg-white border rounded border-primary" >
-		    	<div class="container" style="z-index: 1">
-		    		<!-- Table inside Info Box -->
-					<table class="table table-sm m-0 small" ><tbody>  
-					    <tr >
-					      <th scope="row" class="text-primary">Title</th>
-					      <td colspan="3">My Awesome Network</td>
-					    </tr><tr>
-					      <th class="text-primary">Nodes</th>
-					      <td>13</td>
-					      <th class="text-primary">Edges</th>
-					      <td>30</td>
-					    </tr><tr>
-					      <th class="text-primary">Status</th>
-					      <td colspan="3"><span class="text-danger"><b>Private </b></span>&nbsp<span class="text-secondary">(read only)</span></td>
-					    </tr>
-					  </tbody></table>
-			    </div>
+		<div class="container-fluid">
+		<div class="row" >
+			<p class="border border-danger bg-white ml-5 mt-1 text-danger p-1 small align-self-start" style="z-index: 4"><b>300 Edges</b></p>
+
+			<div class="mx-auto mt-1" style="z-index: 4">
+				<nav aria-label="Page navigation example">
+				  <ul class="pagination pagination-sm">
+				    <li class="page-item mr-1"><a class="page-link" href="#" aria-label="Previous"><i class="fa fa-caret-left"></i></a></li>
+				    <li class="page-item"><a class="page-link" href="#">1</a></li>
+				    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+				    <li class="page-item"><a class="page-link" href="#">3</a></li>
+				    <li class="page-item ml-1"><a class="page-link" href="#" aria-label="Next"><i class="fa fa-caret-right"></i></a></li>
+				  </ul>
+				</nav>
+			</div>
+			
+
+
+			<div class="float-right  mt-2 mb-0 mr-3"  style=" z-index: 4;">
+
+			    	<div class="container border rounded border-primary bg-white" >
+			    		<!-- Table inside Info Box -->
+						<table class="table table-sm m-0 small" ><tbody>  
+						    <tr >
+						      <th scope="row" class="text-primary">Title</th>
+						      <td colspan="3">My Awesome Network</td>
+						    </tr><tr>
+						      <th class="text-primary">Nodes</th>
+						      <td>13</td>
+						      <th class="text-primary">Edges</th>
+						      <td>30</td>
+						    </tr><tr>
+						      <th class="text-primary">Status</th>
+						      <td colspan="3"><span class="text-danger"><b>Private </b></span>&nbsp<span class="text-secondary">(read only)</span></td>
+						    </tr>
+						  </tbody></table>
+				    </div>
+				    <p class="text-center m-0 p-0" style="z-index: 4;"><button data-toggle="collapse" data-target="#dataPanel" class="btn p-0 m-0">
+	      				<i class="fa fa-chevron-down" style="color:blue"></i>
+	  				</button></p>
+			</div>
+				
+		
 		</div>
-		<div class="offset-sm-7 offset-md-8 offset-lg-9  my-0 mr-3" > 
-				<p class="text-center m-0 p-0"><button data-toggle="collapse" data-target="#dataPanel,#footer" class="btn p-0 m-0">
-      				<i class="fa fa-chevron-down" style="color:blue"></i>
-  				</button></p>
 		</div>
+
+
 
 		
 		<!-- Data Panel -->
-		<div  id="dataPanel" class="offset-sm-5 offset-md-6 offset-lg-7  mr-3 flex-grow-1 bg-white border rounded collapse show" >
-	    	<div class="container p-1" style="z-index: 1">
+		<div   class="container-fluid d-flex offset-sm-5 col-sm-7 offset-md-6 col-md-6 offset-lg-7 col-lg-5 " style="flex: 1 1 0;" >
+	    	<div id="dataPanel" class=" mr-3 bg-white border rounded collapse show" style="z-index: 4; overflow-y: auto;" >
 	    		<!-- 3 Buttons to Toggle View  -->
 	    		<div class="btn-group btn-group-sm btn-group-toggle float-right" data-toggle="buttons" >  
 				  	<button type="button" class="btn btn-default active"  data-toggle="tooltip" data-placement="top" title="Info">
@@ -80,16 +102,101 @@
 				</div>
 				
 				<!-- Info View  -->
+				<div class="container-fluid">
+			  <h1>FIRST LINE</h1> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br> So many words, so many words. So many words, so many words. So many words, so many words.
+              <br>
+              <h1>LAST LINE</h1>
+              </div>
 		    </div>
 		</div>
 
 
 		<!-- Search and Buttons -->
-   		<div id="footer" class="mb-3 mt-1 collapse show" >
+   		<div id="footer" class="mb-3 mt-1" >
 	    	<!-- Search Bar -->
 	    	<div class="row ml-1">
 		    	<div class="col-md-6 col-lg-4">
-		    		<div class="input-group">
+		    		<div class="input-group" style=" z-index: 4;">
 			    		<div class="btn-group dropup">
 							  <button type="button" class="btn border rounded-0 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
 							  <div class="dropdown-menu">
@@ -102,30 +209,31 @@
 		    	        <button class="btn border rounded-0" type="submit"><i class="fa fa-search"></i></button>
 		    		</div>
 		  		</div>
-
+				
+				<!-- Actions -->
 		  		<div class="offset-lg-3 d-none d-md-flex justify-content-center  col">
-		  			<div  class="btn-group btn-group-sm mr-1 p-0">
-		  				<div id="actions" class="btn-group btn-group-sm show">
-		  				<button  type="button" class="btn border btn-warning p-1" data-toggle="tooltip" title="Open in Cytoscape"><img src="/staticFiles/cytoscape-icon.png" alt="logo" style="width:20px;"></button>
-		  				<button  type="button" class="btn border btn-success" data-toggle="tooltip" title="Download to CX"><i class="fa fa-download"></i></button>
-		  				<button  type="button" class="btn border btn-primary" data-toggle="tooltip" title="Clone Network"><i class="fa fa-clone"></i></button>
-		  				<button  type="button" class="btn border btn-primary"  data-toggle="tooltip" title="Table View"><i class="fa fa-table"></i></button>
-		  				<button  type="button" class="btn border btn-primary"  data-toggle="tooltip" title="Share Network" ><i class="fa fa-share"></i></button>
-		  				<button  type="button" class="btn border btn-primary"  data-toggle="tooltip" title="Edit Network"><i class="fa fa-pencil"></i></button>
-  						<div class="btn-group dropup">
-							  <button  type="button" class="btn border btn-primary"  data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-							  	<i class="fa fa-ellipsis-h" title="More Options" data-toggle="tooltip"></i></button>
-							  <div class="dropdown-menu">
-							        <a class="dropdown-item small" href="#">Request DOI</a>
-								    <a class="dropdown-item small" href="#">Export</a>
-								    <a class="dropdown-item small" href="#">Add to My Sets</a>
-								    <a class="dropdown-item small" href="#">Delete</a>
-							  </div>
-						</div>
-		  				
-		  				
+		  			<div  class="btn-group btn-group-sm mr-1 p-0" style=" z-index: 4;">
+		  				<button  id="actions" type="button" class="btn border btn-default collapse " data-toggle="collapse" data-target="#actions,#action_btn"><i class="fa fa-caret-right"></i></button>
+		  				<button id="action_btn"  data-toggle="collapse" data-target="#actions,#action_btn" type="button" class="btn btn-primary collapse show">Actions</button>
+		  				<div id="actions" class="btn-group btn-group-sm collapse">
+			  				<button  type="button" class="btn border btn-warning p-1" data-toggle="tooltip" title="Open in Cytoscape"><img src="/staticFiles/cytoscape-icon.png" alt="logo" style="width:20px;"></button>
+			  				<button  type="button" class="btn border btn-success" data-toggle="tooltip" title="Download to CX"><i class="fa fa-download"></i></button>
+			  				<button  type="button" class="btn border btn-primary" data-toggle="tooltip" title="Clone Network"><i class="fa fa-clone"></i></button>
+			  				<button  type="button" class="btn border btn-primary"  data-toggle="tooltip" title="Table View"><i class="fa fa-table"></i></button>
+			  				<button  type="button" class="btn border btn-primary"  data-toggle="tooltip" title="Share Network" ><i class="fa fa-share"></i></button>
+			  				<button  type="button" class="btn border btn-primary"  data-toggle="tooltip" title="Edit Network"><i class="fa fa-pencil"></i></button>
+	  						<div class="btn-group dropup">
+								  <button  type="button" class="btn border btn-primary"  data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+								  	<i class="fa fa-ellipsis-h" title="More Options" data-toggle="tooltip"></i></button>
+								  <div class="dropdown-menu">
+								        <a class="dropdown-item small" href="#">Request DOI</a>
+									    <a class="dropdown-item small" href="#">Export</a>
+									    <a class="dropdown-item small" href="#">Add to My Sets</a>
+									    <a class="dropdown-item small" href="#">Delete</a>
+								  </div>
+							</div>
 		  				</div>
-		  				<button  type="button" class="btn border btn-default" data-toggle="collapse" data-target="#actions"><i class="fa fa-caret-left"></i></button>
+		  				<button id="actions"  type="button" class="btn border btn-default collapse " data-toggle="collapse" data-target="#actions,#action_btn"><i class="fa fa-caret-left"></i></button>
 		  			</div>
 		  			
 		  			
@@ -138,7 +246,7 @@
   		
   		
   	</div> <!-- end Flexbox -->		  	
-	<div id="cy" style="width: 100%; height: 100%; position: absolute; z-index: 0; top: 0px; left: 0px;"></div> <!-- Cytoscape Viewer  -->
+	<div id="cy" style="width: 100%; height: 100%; position: absolute; z-index: 3; top: 0px; left: 0px;"></div> <!-- Cytoscape Viewer  -->
     	
     	
     	
