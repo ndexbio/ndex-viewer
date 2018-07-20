@@ -21,9 +21,9 @@
 	<div class="d-flex flex-column" style="min-height: 100vh;"> 
 
 		<!-- Top Navbar -->
-		<div><nav class="navbar navbar-expand-sm pb-0 d-none d-md-flex" style="background-color: black;  z-index: 4;">
-		  	<a class="navbar-brand pr-5" href="#"><img src="/staticFiles/ndex_logo.png" alt="logo" style="width:120px;"></a>
-			<ul class="navbar-nav mr-auto small">
+		<div><nav class="navbar navbar-expand-lg pb-0 d-none d-md-flex" style="background-color: black;  z-index: 4;">
+		  	<a class="navbar-brand pr-5 mr-auto " href="#"><img src="/staticFiles/ndex_logo.png" alt="logo" style="width:120px;"></a>
+			<ul id="navbarButtons"  class="navbar-nav navbar-collapse collapse mr-auto small">
 			  	<li class="nav-item"><a class="nav-link text-light" href="#"> News </a></li>
 			  	<li class="nav-item"><a class="nav-link text-light" href="#"> About </a></li>
 			  	<li class="nav-item"><a class="nav-link text-light" href="#"> Docs </a></li>
@@ -31,19 +31,21 @@
 			  	<li class="nav-item"><a class="nav-link text-light" href="#"> Contact Us </a></li>
 			  	<li class="nav-item"><a class="nav-link text-light" href="#"> Cite NDEx </a></li>
 		  	</ul>
+			<button class="navbar-toggler d-md btn-primary mr-2" type="button" data-toggle="collapse" data-target="#navbarButtons" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			    <i class="fa fa-bars"></i>
+			</button>
 		  	<button class="btn btn-default btn-sm"><i class="fa fa-search"></i></button>
       		<button class="btn btn-info btn-sm mx-3"><i class="fa fa-home"></i></button>
       		<span class="navbar-text text-info small">Hi, Matthew Elliott!</span>
-      		<a class="nav-link text-light" href="#"> Sign out </a>		
+      		<a class="nav-link text-light" href="#"> Sign</a>
 		</nav></div>
 		
 		
 		<!-- Main Info Box -->
 		<div class="container-fluid">
 		<div class="row" >
-			<p class="border border-danger bg-white ml-5 mt-1 text-danger p-1 small align-self-start" style="z-index: 4"><b>300 Edges</b></p>
-
-			<div class="mx-auto mt-1" style="z-index: 4">
+			<p class="border border-danger bg-white ml-5 mt-1 text-danger p-1 small align-self-start d-none d-sm-inline" style="z-index: 4"><b>300 Edges</b></p>
+			<div class="mx-auto mt-1 d-none d-md-inline" style="z-index: 4">
 				<nav aria-label="Page navigation example">
 				  <ul class="pagination pagination-sm">
 				    <li class="page-item mr-1"><a class="page-link" href="#" aria-label="Previous"><i class="fa fa-caret-left"></i></a></li>
@@ -55,9 +57,7 @@
 				</nav>
 			</div>
 			
-
-
-			<div class="float-right  mt-2 mb-0 mr-3"  style=" z-index: 4;">
+			<div class="mx-sm-auto mx-md-3 mr-3 mt-2 mb-0"  style=" z-index: 4;">
 
 			    	<div class="container border rounded border-primary bg-white" >
 			    		<!-- Table inside Info Box -->
@@ -89,7 +89,7 @@
 
 		
 		<!-- Data Panel -->
-		<div   class="container-fluid d-flex offset-sm-5 col-sm-7 offset-md-6 col-md-6 offset-lg-7 col-lg-5 " style="flex: 1 1 0;" >
+		<div   class="container-fluid d-flex col-sm-6 col-md-5 col-lg-4 offset-sm-6 offset-md-7 offset-lg-8" style="flex: 1 1 0;" >
 	    	<div id="dataPanel" class=" mr-3 bg-white border rounded collapse show col-12" style="z-index: 4; overflow-y: auto;" >
 	    	
 	    	<ul class="nav nav-pills mb-3 float-right mt-1" id="pills-tab" role="tablist">
@@ -112,7 +112,7 @@
 			
 			<div class="tab-content " id="pills-tabContent">
 			  <div class="tab-pane fade show active" id="info-pill" role="tabpanel" aria-labelledby="info-tab">
-			  	<h2 class="pt-1">Network Info</h2><hr class="mt-0">
+			  	<h2 class="pt-1">Network</h2><hr class="mt-0">
 			  </div>
 			  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 			  	<h2 class="pt-1">Nodes/Edges</h2><hr class="mt-0">
@@ -151,7 +151,7 @@
 		  		</div>
 				
 				<!-- Actions -->
-		  		<div class="offset-lg-3 d-none d-md-flex justify-content-center  col">
+		  		<div class="offset-lg-4 d-none d-md-flex justify-content-center  col">
 		  			<div  class="btn-group btn-group-sm mr-1 p-0" style=" z-index: 4;">
 		  				<button  id="actions" type="button" class="btn border btn-default collapse " data-toggle="collapse" data-target="#actions,#action_btn"><i class="fa fa-caret-right"></i></button>
 		  				<button id="action_btn"  data-toggle="collapse" data-target="#actions,#action_btn" type="button" class="btn btn-primary collapse show">Actions</button>
