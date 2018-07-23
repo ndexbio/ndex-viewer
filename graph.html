@@ -21,7 +21,7 @@
 	<div class="d-flex flex-column" style="min-height: 100vh;"> 
 
 		<!-- Top Navbar -->
-		<div><nav class="navbar navbar-expand-lg pb-0 d-none d-md-flex" style="background-color: black;  z-index: 4;">
+		<div><nav class="navbar navbar-expand-lg pb-0" style="background-color: black;  z-index: 4;">
 		  	<a class="navbar-brand pr-5 mr-auto " href="#"><img src="/staticFiles/ndex_logo.png" alt="logo" style="width:120px;"></a>
 			<ul id="navbarButtons"  class="navbar-nav navbar-collapse collapse mr-auto small">
 			  	<li class="nav-item"><a class="nav-link text-light" href="#"> News </a></li>
@@ -36,29 +36,21 @@
 			</button>
 		  	<button class="btn btn-default btn-sm"><i class="fa fa-search"></i></button>
       		<button class="btn btn-info btn-sm mx-3"><i class="fa fa-home"></i></button>
-      		<span class="navbar-text text-info small">Hi, Matthew Elliott!</span>
-      		<a class="nav-link text-light" href="#"> Sign</a>
+      		<div class="d-none d-sm-flex">
+      			<span class="navbar-text text-info small">Hi, Matthew Elliott!</span>
+      			<a class="nav-link text-light" href="#"> Sign Out</a>
+  			</div>
 		</nav></div>
 		
 		
-		<!-- Main Info Box -->
-		<div class="container-fluid">
-		<div class="row" >
-			<p class="border border-danger bg-white ml-5 mt-1 text-danger p-1 small align-self-start d-none d-sm-inline" style="z-index: 4"><b>300 Edges</b></p>
-			<div class="mx-auto mt-1 d-none d-md-inline" style="z-index: 4">
-				<nav aria-label="Page navigation example">
-				  <ul class="pagination pagination-sm">
-				    <li class="page-item mr-1"><a class="page-link" href="#" aria-label="Previous"><i class="fa fa-caret-left"></i></a></li>
-				    <li class="page-item"><a class="page-link" href="#">1</a></li>
-				    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-				    <li class="page-item"><a class="page-link" href="#">3</a></li>
-				    <li class="page-item ml-1"><a class="page-link" href="#" aria-label="Next"><i class="fa fa-caret-right"></i></a></li>
-				  </ul>
-				</nav>
-			</div>
-			
-			<div class="mx-sm-auto mx-md-3 mr-3 mt-2 mb-0"  style=" z-index: 4;">
-
+		<!-- Top Row -->
+		<div class="container-fluid"><div class="row justify-content-between justify-content-end" >
+		
+			<!-- Edges Text -->
+			<p class="border border-danger bg-white text-danger ml-5 mt-3 p-1 small align-self-start d-none d-sm-flex" style="z-index: 4"><b>300 Edges</b></p>
+				
+			<!-- Main Info -->
+			<div class="mt-4 mx-5 mb-0"  style=" z-index: 5;">
 			    	<div class="container border rounded border-primary bg-white" >
 			    		<!-- Table inside Info Box -->
 						<table class="table table-sm m-0 small" ><tbody>  
@@ -76,65 +68,102 @@
 						    </tr>
 						  </tbody></table>
 				    </div>
-				    <p class="text-center m-0 p-0" style="z-index: 4;"><button data-toggle="collapse" data-target="#dataPanel" class="btn p-0 m-0">
+				    <p class="text-center m-0 p-0" style="z-index: 4;"><button data-toggle="collapse" data-target="#dataPanel,#actionBox,#viewBox" class="btn p-0 m-0">
 	      				<i class="fa fa-chevron-down" style="color:blue"></i>
 	  				</button></p>
 			</div>
+		</div></div>
+
+
+
+		<!-- Big Box  (Middle Row) -->
+		<div   class="container d-flex col-sm-6 col-md-5 col-lg-4 offset-sm-6 offset-md-7 offset-lg-8" style="flex: 1 1 0;" >
 				
-		
-		</div>
-		</div>
-
-
-
-		
-		<!-- Data Panel -->
-		<div   class="container-fluid d-flex col-sm-6 col-md-5 col-lg-4 offset-sm-6 offset-md-7 offset-lg-8" style="flex: 1 1 0;" >
-	    	<div id="dataPanel" class=" mr-3 bg-white border rounded collapse show col-12" style="z-index: 4; overflow-y: auto;" >
-	    	
-	    	<ul class="nav nav-pills mb-3 float-right mt-1" id="pills-tab" role="tablist">
-			  <li class="nav-item" data-toggle="tooltip" data-placement="top" title="Info">
-			    <a class="nav-link small active" id="info-tab" data-toggle="pill" href="#info-pill" role="tab" aria-controls="info-tab" aria-selected="true">
-			    	<i class="fa fa-info"></i>
-		    	</a>
-			  </li>
-			  <li class="nav-item" data-toggle="tooltip" data-placement="top" title="Nodes/Edges">
-			    <a class="nav-link small" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
-			    	<i class="fa fa-share-alt"></i>
-		    	</a>
-			  </li>
-			  <li class="nav-item" data-toggle="tooltip" data-placement="top" title="History">
-			    <a class="nav-link small" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">
-			    	<i class="fa fa-history"></i>
-		    	</a>
-			  </li>
-			</ul>
-			
-			<div class="tab-content " id="pills-tabContent">
-			  <div class="tab-pane fade show active" id="info-pill" role="tabpanel" aria-labelledby="info-tab">
-			  	<h2 class="pt-1">Network</h2><hr class="mt-0">
-			  </div>
-			  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-			  	<h2 class="pt-1">Nodes/Edges</h2><hr class="mt-0">
-			  </div>
-			  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-			  <h2 class="pt-1">Provenance</h2><hr class="mt-0">
-			  </div>
-			</div>
-	    	
-	    	
-	    	
-
+				<!-- Left Hand Buttongs -->
+				<div  class="d-flex flex-column justify-content-between ">	
 				
-
+					<!-- Actions -->
+		  			<div id="actionBox" class="btn-group-vertical btn-group-sm p-0 align-self-start collapse show" style=" z-index: 5;">
+		  				<button id="action_btn"  data-toggle="collapse" data-target="#actions" type="button" class="border btn-default dropdown-toggle px-3"></button>
+		  				<div id="actions" class="btn-group-vertical btn-group-sm collapse">
+			  				<button  type="button" class="btn border btn-warning p-1" data-toggle="tooltip" title="Open in Cytoscape"><img src="/staticFiles/cytoscape-icon.png" alt="logo" style="width:20px;"></button>
+			  				<button  type="button" class="btn border btn-success" data-toggle="tooltip" title="Download to CX"><i class="fa fa-download"></i></button>
+			  				<button  type="button" class="btn border btn-primary" data-toggle="tooltip" title="Clone Network"><i class="fa fa-clone"></i></button>
+			  				<button  type="button" class="btn border btn-primary"  data-toggle="tooltip" title="Table View"><i class="fa fa-table"></i></button>
+			  				<button  type="button" class="btn border btn-primary"  data-toggle="tooltip" title="Share Network" ><i class="fa fa-share"></i></button>
+			  				<button  type="button" class="btn border btn-primary"  data-toggle="tooltip" title="Edit Network"><i class="fa fa-pencil"></i></button>
+	  						<div class="btn-group dropdown dropdown-menu-left">
+								  <button  type="button" class="btn border btn-primary"  data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+								  	<i class="fa fa-ellipsis-h" title="More Options" data-toggle="tooltip"></i></button>
+								  <div class="dropdown-menu">
+								        <a class="dropdown-item small" href="#">Request DOI</a>
+									    <a class="dropdown-item small" href="#">Export</a>
+									    <a class="dropdown-item small" href="#">Add to My Sets</a>
+									    <a class="dropdown-item small" href="#">Delete</a>
+								  </div>
+							</div>
+		  				</div>
+		  			</div>
+		  			
+		  			<!-- View Toggle Buttons -->
+					<div id="viewBox" class="dropup collapse show" style="z-index: 4">
+						<nav id="views" aria-label="Page navigation example collapse show">
+						  <ul class="pagination pagination-sm btn-group-vertical "  >
+						    <!--<li class="page-item mr-1"><a class="page-link" href="#" aria-label="Previous"><i class="fa fa-caret-left"></i></a></li>-->
+						    <li class="page-item"><a class="page-link" href="#">1</a></li>
+						    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+						    <li class="page-item"><a class="page-link" href="#">3</a></li>
+						    <!--<li class="page-item ml-1"><a class="page-link" href="#" aria-label="Next"><i class="fa fa-caret-right"></i></a></li>-->
+						  </ul>
+						</nav>
+						<button id="view_btn"  data-toggle="collapse" data-target="#views" type="button" class="border btn-default  dropdown-toggle px-3"></button>
+					</div>
+				</div>
+	    	
+	    	
+	    	<!-- Info Box -->
+	    	<div id="dataPanel" class="mr-3 bg-white border collapse show col-11" style="z-index: 4; overflow-y: auto;" >
+	    	
+				<!-- Corner Buttons -->
+		    	<ul class="nav nav-pills mb-3 float-right mt-1" id="pills-tab" role="tablist">
+				  <li class="nav-item" data-toggle="tooltip" data-placement="top" title="Info">
+				    <a class="nav-link small active" id="info-tab" data-toggle="pill" href="#info-pill" role="tab" aria-controls="info-tab" aria-selected="true">
+				    	<i class="fa fa-info"></i>
+			    	</a>
+				  </li>
+				  <li class="nav-item" data-toggle="tooltip" data-placement="top" title="Nodes/Edges">
+				    <a class="nav-link small" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
+				    	<i class="fa fa-share-alt"></i>
+			    	</a>
+				  </li>
+				  <li class="nav-item" data-toggle="tooltip" data-placement="top" title="History">
+				    <a class="nav-link small" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">
+				    	<i class="fa fa-history"></i>
+			    	</a>
+				  </li>
+				</ul>
+				
+				<!-- Main Info Zone -->
+				<div class="tab-content " id="pills-tabContent">
+				  <div class="tab-pane fade show active" id="info-pill" role="tabpanel" aria-labelledby="info-tab">
+				  	<h2 class="pt-1">Network</h2><hr class="mt-0">
+				  </div>
+				  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+				  	<h2 class="pt-1">Nodes/Edges</h2><hr class="mt-0">
+				  </div>
+				  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+				  <h2 class="pt-1">Provenance</h2><hr class="mt-0">
+				  </div>
+				</div>
 		    </div>
+		    
 		</div>
 
 
-		<!-- Search and Buttons -->
-   		<div id="footer" class="mb-3 mt-1" >
+		<!-- Bottome Row -->
+   		<div id="footer" class="mb-3 mx-3 pb-2 mt-1" >
 	    	<!-- Search Bar -->
-	    	<div class="row ml-1">
+	    	<div class="row ml-1 justify-content-between">
 		    	<div class="col-md-6 col-lg-4">
 		    		<div class="input-group" style=" z-index: 4;">
 			    		<div class="btn-group dropup">
@@ -149,36 +178,6 @@
 		    	        <button class="btn border rounded-0" type="submit"><i class="fa fa-search"></i></button>
 		    		</div>
 		  		</div>
-				
-				<!-- Actions -->
-		  		<div class="offset-lg-4 d-none d-md-flex justify-content-center  col">
-		  			<div  class="btn-group btn-group-sm mr-1 p-0" style=" z-index: 4;">
-		  				<button  id="actions" type="button" class="btn border btn-default collapse " data-toggle="collapse" data-target="#actions,#action_btn"><i class="fa fa-caret-right"></i></button>
-		  				<button id="action_btn"  data-toggle="collapse" data-target="#actions,#action_btn" type="button" class="btn btn-primary collapse show">Actions</button>
-		  				<div id="actions" class="btn-group btn-group-sm collapse">
-			  				<button  type="button" class="btn border btn-warning p-1" data-toggle="tooltip" title="Open in Cytoscape"><img src="/staticFiles/cytoscape-icon.png" alt="logo" style="width:20px;"></button>
-			  				<button  type="button" class="btn border btn-success" data-toggle="tooltip" title="Download to CX"><i class="fa fa-download"></i></button>
-			  				<button  type="button" class="btn border btn-primary" data-toggle="tooltip" title="Clone Network"><i class="fa fa-clone"></i></button>
-			  				<button  type="button" class="btn border btn-primary"  data-toggle="tooltip" title="Table View"><i class="fa fa-table"></i></button>
-			  				<button  type="button" class="btn border btn-primary"  data-toggle="tooltip" title="Share Network" ><i class="fa fa-share"></i></button>
-			  				<button  type="button" class="btn border btn-primary"  data-toggle="tooltip" title="Edit Network"><i class="fa fa-pencil"></i></button>
-	  						<div class="btn-group dropup">
-								  <button  type="button" class="btn border btn-primary"  data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-								  	<i class="fa fa-ellipsis-h" title="More Options" data-toggle="tooltip"></i></button>
-								  <div class="dropdown-menu">
-								        <a class="dropdown-item small" href="#">Request DOI</a>
-									    <a class="dropdown-item small" href="#">Export</a>
-									    <a class="dropdown-item small" href="#">Add to My Sets</a>
-									    <a class="dropdown-item small" href="#">Delete</a>
-								  </div>
-							</div>
-		  				</div>
-		  				<button id="actions"  type="button" class="btn border btn-default collapse " data-toggle="collapse" data-target="#actions,#action_btn"><i class="fa fa-caret-left"></i></button>
-		  			</div>
-		  			
-		  			
-		  		</div>
-
 	  		</div>
   		</div>
 
